@@ -1876,7 +1876,7 @@ cancer samples.</p>
 <pre class="r"><code>SCIPAC.res &lt;- SCIPAC(bulk.dat = bulk.dat.dim.redu, y = y, 
                      family = &quot;binomial&quot;, ct.res = ct.res, 
                      ela.net.alpha = 0.4, bt.size = 50, 
-                     numCores = 7, CI.alpha = 0.05)</code></pre>
+                     numCores = 7, CI.alpha = 0.05, nfold = 10)</code></pre>
 <p>In the <code>SCIPAC</code> function, we set
 <code>family = &quot;binomial&quot;</code> since we use binary input. For other
 parameters <code>ela.net.alpha</code>, <code>bt.size</code>,
@@ -2113,7 +2113,7 @@ clustering.</p>
 <pre class="r"><code>SCIPAC.res.ordinal &lt;- SCIPAC(bulk.dat = bulk.dat.ordinal, y = y,
                              family = &quot;cumulative&quot;, ct.res = ct.res.ordinal,
                              ela.net.alpha = 0.4, bt.size = 50,
-                             numCores = 7, CI.alpha = 0.05)</code></pre>
+                             numCores = 7, CI.alpha = 0.05, nfold = 10)</code></pre>
 <p>We set <code>family = &quot;cumulative&quot;</code> for ordinal input
 <code>y</code> and use the default values for other parameters.</p>
 </div>
@@ -2348,7 +2348,7 @@ all(rownames(LUAD.bulk.dat.sub) == rownames(y))</code></pre>
 <pre class="r"><code>SCIPAC.res.LUAD &lt;- SCIPAC(bulk.dat = LUAD.bulk.dat.sub, y = y,
                              family = &quot;cox&quot;, ct.res = LUAD.ct.res,
                              ela.net.alpha = 0.4, bt.size = 50,
-                             numCores = 7, CI.alpha = 0.05)</code></pre>
+                             numCores = 7, CI.alpha = 0.05, nfold = 10)</code></pre>
 <p>We set <code>family = &quot;cox&quot;</code> for survival input <code>y</code>
 and use the default values for other parameters.</p>
 </div>
@@ -2467,25 +2467,25 @@ p3 &lt;- ggplot() +
 ## loaded via a namespace (and not attached):
 ##   [1] Seurat_4.2.0          Rtsne_0.16            colorspace_2.0-3     
 ##   [4] deldir_1.0-6          ellipsis_0.3.2        ggridges_0.5.4       
-##   [7] rstudioapi_0.13       spatstat.data_2.2-0   farver_2.1.1         
+##   [7] rstudioapi_0.13       spatstat.data_3.0-0   farver_2.1.1         
 ##  [10] leiden_0.4.3          listenv_0.8.0         fansi_1.0.3          
 ##  [13] codetools_0.2-18      splines_4.1.2         cachem_1.0.6         
 ##  [16] knitr_1.39            polyclip_1.10-0       jsonlite_1.8.2       
 ##  [19] ica_1.0-3             cluster_2.1.3         png_0.1-7            
 ##  [22] rgeos_0.5-9           shiny_1.7.2           sctransform_0.3.5    
-##  [25] spatstat.sparse_2.1-1 compiler_4.1.2        httr_1.4.4           
+##  [25] spatstat.sparse_3.0-0 compiler_4.1.2        httr_1.4.4           
 ##  [28] assertthat_0.2.1      SeuratObject_4.1.2    fastmap_1.1.0        
 ##  [31] lazyeval_0.2.2        cli_3.4.1             later_1.3.0          
 ##  [34] htmltools_0.5.3       tools_4.1.2           igraph_1.3.5         
 ##  [37] gtable_0.3.1          glue_1.6.2            RANN_2.6.1           
 ##  [40] reshape2_1.4.4        Rcpp_1.0.9            scattermore_0.8      
 ##  [43] jquerylib_0.1.4       vctrs_0.4.2           nlme_3.1-158         
-##  [46] progressr_0.11.0      lmtest_0.9-40         spatstat.random_2.2-0
+##  [46] progressr_0.11.0      lmtest_0.9-40         spatstat.random_3.0-1
 ##  [49] xfun_0.31             stringr_1.4.1         globals_0.16.1       
 ##  [52] mime_0.12             miniUI_0.1.1.1        lifecycle_1.0.3      
 ##  [55] irlba_2.3.5.1         goftest_1.2-3         future_1.28.0        
 ##  [58] MASS_7.3-58           zoo_1.8-11            scales_1.2.1         
-##  [61] spatstat.core_2.4-4   promises_1.2.0.1      spatstat.utils_2.3-1 
+##  [61] spatstat.core_2.4-4   promises_1.2.0.1      spatstat.utils_3.0-1 
 ##  [64] parallel_4.1.2        RColorBrewer_1.1-3    yaml_2.3.5           
 ##  [67] reticulate_1.26       pbapply_1.5-0         gridExtra_2.3        
 ##  [70] sass_0.4.2            rpart_4.1.16          stringi_1.7.8        
@@ -2499,7 +2499,7 @@ p3 &lt;- ggplot() +
 ##  [94] mgcv_1.8-40           pillar_1.8.1          fitdistrplus_1.1-8   
 ##  [97] survival_3.3-1        abind_1.4-5           sp_1.5-0             
 ## [100] tibble_3.1.8          future.apply_1.9.1    KernSmooth_2.23-20   
-## [103] utf8_1.2.2            spatstat.geom_2.4-0   plotly_4.10.0        
+## [103] utf8_1.2.2            spatstat.geom_3.0-3   plotly_4.10.0        
 ## [106] rmarkdown_2.19.2      grid_4.1.2            data.table_1.14.4    
 ## [109] digest_0.6.29         xtable_1.8-4          tidyr_1.2.1          
 ## [112] httpuv_1.6.6          munsell_0.5.0         viridisLite_0.4.1    
